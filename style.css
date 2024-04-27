@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+
+body {
+  background-color: rgb(8, 121, 226);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.playlist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: tomato;
+  gap: 10px;
+  font-size: 3vw
+}
+
+.song {
+  margin: 10px 2px;
+  background-color: white;
+  border: 2px black solid;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+audio {
+  width: 100%;
+  height: 50px;
+}
+
+/* Media Queries */
+@media (max-width: 1068px) {
+  .playlist {
+    grid-template-columns: repeat(2, 1fr);
+    /* Cambia a 2 columnas en tablets y dispositivos más pequeños */
+  }
+}
+
+@media (max-width: 1000px) {
+  .playlist {
+    grid-template-columns: 1fr;
+    /* Cambia a 1 columna en móviles */
+  }
+
+  .song {
+    margin: 5px;
+    /* Menores márgenes para mejor uso del espacio */
+  }
+}
+
+
+audio {
+  width: 100%;
+  /* Asegura que el controlador de audio ocupe todo el espacio disponible de su contenedor */
+  height: 60px;
+  /* Aumenta la altura para mejorar la accesibilidad en móviles */
+  outline: none;
+  /* Elimina cualquier contorno que pueda aparecer al hacer clic */
+  background-color: #fff;
+  /* Define un color de fondo */
+  border: 1px solid #ccc;
+  /* Agrega un borde sutil */
+  border-radius: 15px;
+  /* Redondea las esquinas para que coincidan con otros elementos */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Añade una sombra ligera para un efecto elevado */
+  padding: 10px;
+  /* Añade más relleno alrededor de los controles para facilitar la interacción */
+}
+
+/* Personalización de controles para navegadores basados en WebKit */
+input[type="range"]::-webkit-slider-thumb {
+  background: tomato;
+  /* Color del botón deslizante */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  /* Cambia el cursor cuando se pasa por encima */
+  -webkit-appearance: none;
+  /* Elimina la apariencia predeterminada */
+  height: 24px;
+  /* Altura del botón deslizante */
+  width: 24px;
+  /* Anchura del botón deslizante */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: lightgray;
+  /* Color de la pista */
+  border-radius: 15px;
+  /* Redondea las esquinas de la pista */
+  height: 12px;
+  /* Altura de la pista */
+}
+
+@media (max-width: 1000px) {
+  audio {
+    height: 70px;
+    /* Aumenta aún más la altura en dispositivos móviles */
+    padding: 15px;
+    /* Más relleno para facilitar la interacción */
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    height: 30px;
+    /* Aumenta el tamaño del botón deslizante para una mejor manipulación */
+    width: 30px;
+    /* Aumenta el ancho del botón deslizante */
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 16px;
+    /* Aumenta la altura de la pista */
+  }
+}
